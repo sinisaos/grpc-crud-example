@@ -8,8 +8,8 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
-	"github.com/sinisaos/grpc-todo/models"
-	pb "github.com/sinisaos/grpc-todo/proto"
+	"github.com/sinisaos/grpc-crud-example/models"
+	pb "github.com/sinisaos/grpc-crud-example/proto"
 	"google.golang.org/grpc"
 )
 

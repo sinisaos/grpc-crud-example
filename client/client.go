@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	pb "github.com/sinisaos/grpc-todo/proto"
-	"github.com/sinisaos/grpc-todo/schemas"
+	pb "github.com/sinisaos/grpc-crud-example/proto"
+	"github.com/sinisaos/grpc-crud-example/schemas"
 	"google.golang.org/grpc"
 )
 
@@ -87,7 +87,7 @@ func CreateTodo(c *gin.Context) {
 	}
 	defer conn.Close()
 	client := pb.NewTodoServiceClient(conn)
-	var input schemas.CreateTodoIn
+	var input schemas.TodoSchemaIn
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -112,7 +112,7 @@ func UpdateTodo(c *gin.Context) {
 		panic(err)
 	}
 	id := uint64(i)
-	var input schemas.UpdateTodoIn
+	var input schemas.TodoSchemaIn
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return

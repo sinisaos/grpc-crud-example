@@ -2,12 +2,12 @@
 
 Start gRPC server
 ```
-$ go run server/server.go
+$ go run cmd/server/server.go
 ```
 
 Start gRPC client (Gin web framework)
 ```
-$ go run client/client.go
+$ go run cmd/client/client.go
 ```
 
 Use ``curl`` to interact with the client api on address ``http://localhost:8080``.

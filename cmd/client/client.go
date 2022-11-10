@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	pb "github.com/sinisaos/grpc-crud-example/proto"
-	"github.com/sinisaos/grpc-crud-example/schemas"
+	pb "github.com/sinisaos/grpc-crud-example/pkg/proto"
+	"github.com/sinisaos/grpc-crud-example/pkg/schemas"
 	"google.golang.org/grpc"
 )
 

@@ -8,14 +8,16 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
-	"github.com/sinisaos/grpc-crud-example/models"
-	pb "github.com/sinisaos/grpc-crud-example/proto"
+	"github.com/sinisaos/grpc-crud-example/pkg/models"
+	pb "github.com/sinisaos/grpc-crud-example/pkg/proto"
 	"google.golang.org/grpc"
 )
 
 var DB *gorm.DB
 
-type server struct{ pb.TodoServiceServer }
+type server struct {
+	pb.TodoServiceServer
+}
 
 func (*server) ListTodos(ctx context.Context, r *pb.ListTodosRequest) (*pb.ListTodosResponse, error) {
 	todos := make([]*pb.Todo, 0)
